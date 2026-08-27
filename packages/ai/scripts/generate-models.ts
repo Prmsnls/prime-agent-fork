@@ -1100,7 +1100,11 @@ async function loadModelsDevData(): Promise<Model<any>[]> {
 					api = "anthropic-messages";
 					baseUrl = CLOUDFLARE_AI_GATEWAY_ANTHROPIC_BASE_URL;
 					id = nativeId;
-				} else if (upstream === "workers-ai") {
+				} else if (upstream === "workers-ai" || upstream === "moonshotai") {
+					// moonshotai/* entries are OpenAI-compatible passthroughs on the
+					// same gateway compat endpoint (models.dev renamed
+					// workers-ai/@cf/moonshotai/* to moonshotai/* when Moonshot
+					// joined the gateway natively).
 					api = "openai-completions";
 					baseUrl = CLOUDFLARE_AI_GATEWAY_COMPAT_BASE_URL;
 					id = prefixedId;

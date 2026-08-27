@@ -330,7 +330,7 @@ describe("totalTokens field", () => {
 			retry: 3,
 			timeout: 60000,
 		}, async () => {
-			const llm = getModel("cloudflare-ai-gateway", "moonshotai/kimi-k3";
+			const llm = getModel("cloudflare-ai-gateway", "moonshotai/kimi-k3");
 
 			console.log(`\nCloudflare AI Gateway / ${llm.id}:`);
 			const { first, second } = await testTotalTokensWithCache(llm, {
